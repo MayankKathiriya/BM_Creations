@@ -1,0 +1,825 @@
+:root {
+  --background-color: #101d2d;
+  --primary-color: #977145;
+  --highlight-color: #f0a500;
+  --overlay-color: rgba(16, 29, 45, 0.5);
+  --hero-overlay-color: rgba(0, 0, 0, 0.5);
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar {
+  background-color: transparent !important;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.navbar-nav .nav-link {
+  color: var(--primary-color);
+}
+
+.navbar-light .navbar-toggler {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.jumbotron {
+  background: url("../image/hero1.jpg") no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--primary-color);
+  position: relative;
+}
+
+.jumbotron h1,
+.jumbotron p {
+  color: #cf842d;
+  text-shadow: #cf842d 0.04em 0.04em 0.06em;
+  z-index: 2;
+}
+
+.jumbotron::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--overlay-color);
+  z-index: 1;
+}
+
+.gallery-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.card {
+  border: none;
+  background-color: var(--background-color);
+}
+
+.card-title {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.card-text {
+  color: var(--primary-color);
+}
+
+footer {
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  padding: 20px 0;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--background-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--background-color);
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  box-shadow: 3px 3px 8px var(--primary-color);
+}
+
+.form-control::placeholder {
+  color: var(--primary-color);
+  opacity: 1;
+}
+
+section {
+  padding: 50px 0;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+  color: var(--highlight-color) !important;
+  text-decoration: underline;
+}
+
+.hero {
+  background: url("https://via.placeholder.com/1200x400") no-repeat center
+    center;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--hero-overlay-color);
+  z-index: 1;
+}
+
+.hero-content {
+  z-index: 2;
+  color: var(--primary-color);
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+/* new prompt for gpt 
+index.html:-
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mehndi Art Studio</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- AOS CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/font.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img
+            src="./image/newlogo_in_png-removebg-preview.png"
+            width="15%"
+            height="12%"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./gallery.html">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#testimonials">Testimonials</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Jumbotron -->
+    <div class="jumbotron text-center" data-aos="fade-up">
+      <h1>Welcome to Mehndi's Creation World</h1>
+      <p>Experience the elegance and beauty of Mehndi artistry</p>
+    </div>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-5" data-aos="fade-up">
+      <div class="container">
+        <h2 class="text-center mb-4">Gallery</h2>
+        <div class="row">
+          <div class="col-lg-4 col-md-6" data-aos="zoom-in">
+            <div class="card">
+              <img
+                src="https://via.placeholder.com/400x300?text=Mehndi+Design+1"
+                class="card-img-top gallery-img"
+                alt="Gallery Image 1"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Design 1</h5>
+                <p class="card-text">Beautiful Mehndi design for hands.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="zoom-in">
+            <div class="card">
+              <img
+                src="https://via.placeholder.com/400x300?text=Mehndi+Design+2"
+                class="card-img-top gallery-img"
+                alt="Gallery Image 2"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Design 2</h5>
+                <p class="card-text">Intricate Mehndi design for feet.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="zoom-in">
+            <div class="card">
+              <img
+                src="https://via.placeholder.com/400x300?text=Mehndi+Design+3"
+                class="card-img-top gallery-img"
+                alt="Gallery Image 3"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Design 3</h5>
+                <p class="card-text">
+                  Exquisite Mehndi design for special occasions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <a href="gallery.html" class="btn btn-primary">View Full Gallery</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5" data-aos="fade-up">
+      <div class="container">
+        <h2 class="text-center mb-4">About Us</h2>
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-right">
+            <p>
+              Mehndi Art Studio is dedicated to providing you with the most
+              beautiful and intricate Mehndi designs for your special occasions.
+              Our skilled artists specialize in traditional and contemporary
+              designs that will enhance your natural beauty.
+            </p>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <img
+              src="https://via.placeholder.com/500x350"
+              class="img-fluid rounded"
+              alt="About Image"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-5" data-aos="fade-up">
+      <div class="container">
+        <h2 class="text-center mb-4">Testimonials</h2>
+        <div class="row">
+          <div class="col-lg-4 col-md-6" data-aos="flip-left">
+            <div class="card text-center">
+              <img
+                src="https://via.placeholder.com/150"
+                class="card-img-top rounded-circle mx-auto mt-4"
+                style="width: 150px; height: 150px"
+                alt="Client 1"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Client 1</h5>
+                <p class="card-text">
+                  "Amazing designs and great service. Highly recommend!"
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="flip-left">
+            <div class="card text-center">
+              <img
+                src="https://via.placeholder.com/150"
+                class="card-img-top rounded-circle mx-auto mt-4"
+                style="width: 150px; height: 150px"
+                alt="Client 2"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Client 2</h5>
+                <p class="card-text">
+                  "Absolutely loved my Mehndi! Highly recommend their services."
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="flip-left">
+            <div class="card text-center">
+              <img
+                src="https://via.placeholder.com/150"
+                class="card-img-top rounded-circle mx-auto mt-4"
+                style="width: 150px; height: 150px"
+                alt="Client 3"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Client 3</h5>
+                <p class="card-text">
+                  "Professional and talented artists. The best Mehndi
+                  experience!"
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5" data-aos="fade-up">
+      <div class="container">
+        <h2 class="text-center mb-4">Contact Us</h2>
+        <div class="row">
+          <div class="col-md-6" data-aos="fade-right">
+            <p>
+              If you have any questions or inquiries, feel free to reach out to
+              us. We're always happy to assist you!
+            </p>
+            <ul class="list-unstyled">
+              <li><strong>Phone:</strong> +1 (123) 456-7890</li>
+              <li><strong>Email:</strong> info@mehndiartstudio.com</li>
+            </ul>
+          </div>
+          <div class="col-md-6" data-aos="fade-left">
+            <form action="/send-email" method="POST">
+              <div class="mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="name"
+                  placeholder="Your Name"
+                  style="background-color: #101d2d; color: #977145"
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  name="email"
+                  placeholder="Your Email"
+                  style="background-color: #101d2d; color: #977145"
+                />
+              </div>
+              <div class="mb-3">
+                <textarea
+                  class="form-control"
+                  name="message"
+                  rows="5"
+                  placeholder="Your Message"
+                  style="background-color: #101d2d; color: #977145"
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="text-center">
+      <p>&copy; 2024 Mehndi Art Studio. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      // Function to set active class on the correct nav link
+      function setActiveNavLink() {
+        // Get the current URL path and hash
+        const currentPath = window.location.pathname;
+        const currentHash = window.location.hash;
+
+        // Get all navbar links
+        const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+
+        // Loop through each link and add 'active' class if href matches the current path or hash
+        navLinks.forEach((link) => {
+          const linkPath = link.getAttribute("href").split("#")[0];
+          const linkHash = link.getAttribute("href").split("#")[1] || "";
+
+          if (
+            linkPath === currentPath &&
+            (currentHash === "" || `#${linkHash}` === currentHash)
+          ) {
+            link.classList.add("active");
+          } else {
+            link.classList.remove("active");
+          }
+        });
+      }
+
+      // Call the function to set the active nav link
+      setActiveNavLink();
+
+      // Add event listener to update active nav link on hash change
+      window.addEventListener("hashchange", setActiveNavLink);
+    </script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
+
+gallary.html:-
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mehndi Art Studio</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- AOS CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img
+            src="./image/newlogo_in_png-removebg-preview.png"
+            width="15%"
+            height="12%"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./gallery.html">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#testimonials">Testimonials</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+      <div class="hero-content" data-aos="fade-up">
+        <h1>Gallery</h1>
+        <p>Explore our beautiful Mehndi designs.</p>
+      </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-4" data-aos="fade-up">Gallery</h2>
+        <div class="row">
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <img
+              src="https://via.placeholder.com/400x300?text=Mehndi+Design+1"
+              class="gallery-img"
+              alt="Gallery Image 1"
+            />
+          </div>
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <img
+              src="https://via.placeholder.com/400x300?text=Mehndi+Design+2"
+              class="gallery-img"
+              alt="Gallery Image 2"
+            />
+          </div>
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <img
+              src="https://via.placeholder.com/400x300?text=Mehndi+Design+3"
+              class="gallery-img"
+              alt="Gallery Image 3"
+            />
+          </div>
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <img
+              src="https://via.placeholder.com/400x300?text=Mehndi+Design+4"
+              class="gallery-img"
+              alt="Gallery Image 4"
+            />
+          </div>
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="500"
+          >
+            <img
+              src="https://via.placeholder.com/400x300?text=Mehndi+Design+5"
+              class="gallery-img"
+              alt="Gallery Image 5"
+            />
+          </div>
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="600"
+          >
+            <img
+              src="https://via.placeholder.com/400x300?text=Mehndi+Design+6"
+              class="gallery-img"
+              alt="Gallery Image 6"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="text-center">
+      <p>&copy; 2024 Mehndi Art Studio. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      // Function to set active class on the correct nav link
+      function setActiveNavLink() {
+        // Get the current URL path and hash
+        const currentPath = window.location.pathname;
+        const currentHash = window.location.hash;
+
+        // Get all navbar links
+        const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+
+        // Loop through each link and add 'active' class if href matches the current path or hash
+        navLinks.forEach((link) => {
+          const linkPath = link.getAttribute("href").split("#")[0];
+          const linkHash = link.getAttribute("href").split("#")[1] || "";
+
+          if (
+            linkPath === currentPath &&
+            (currentHash === "" || `#${linkHash}` === currentHash)
+          ) {
+            link.classList.add("active");
+          } else {
+            link.classList.remove("active");
+          }
+        });
+      }
+
+      // Call the function to set the active nav link
+      setActiveNavLink();
+
+      // Add event listener to update active nav link on hash change
+      window.addEventListener("hashchange", setActiveNavLink);
+    </script>
+
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
+
+style.css:-
+body {
+  background-color: #101d2d;
+  color: #977145;
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar {
+  background-color: transparent !important;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: #977145;
+}
+
+.navbar-nav .nav-link {
+  color: #977145;
+}
+
+.navbar-light .navbar-toggler {
+  color: #977145;
+  border-color: #977145;
+}
+
+.jumbotron {
+  background: url("../image/hero1.jpg") no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #977145;
+  position: relative;
+}
+
+.jumbotron h1,
+.jumbotron p {
+  color: #977145;
+  z-index: 2;
+}
+
+.jumbotron::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(16, 29, 45, 0.5);
+  z-index: 1;
+}
+
+.gallery-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.card {
+  border: none;
+  background-color: #101d2d;
+}
+
+.card-title {
+  color: #977145;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.card-text {
+  color: #977145;
+}
+
+footer {
+  background-color: #101d2d;
+  color: #977145;
+  padding: 20px 0;
+}
+
+.btn-primary {
+  background-color: #977145;
+  border-color: #977145;
+  color: #101d2d;
+}
+
+.btn-primary:hover {
+  background-color: #101d2d;
+  border: 2px solid #977145;
+  color: #977145;
+  box-shadow: 3px 3px 8px #977145;
+}
+
+.form-control::placeholder {
+  color: #977145;
+  opacity: 1;
+}
+
+section {
+  padding: 50px 0;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+  color: #f0a500 !important;
+  text-decoration: underline;
+}
+
+.hero {
+  background: url("https://via.placeholder.com/1200x400") no-repeat center
+    center;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.hero-content {
+  z-index: 2;
+  color: #977145;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  color: #977145;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #977145;
+}
+
+
+this is my latest updated code so could you pls make this website proper responsive for all devices because this is not properly responsive.
+*/
